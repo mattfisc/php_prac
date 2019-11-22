@@ -10,5 +10,4 @@ $json = array{
 }
     // task 4
     header("Contenttype:Application/json");
-    print(json_encode($json));
 ?>

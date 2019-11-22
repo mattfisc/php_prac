@@ -5,8 +5,8 @@ function fetchTerm(){
 }
 
 function createRandomWordDefin(){
-    var json = JSON.parse(this.respnseText);
+    var json = JSON.parse(this.responseText);
 
-    document.getElementById("defin").innerHTML = json;
-    document.getElementById("word").innerHTML = json;
+    document.getElementById("defin").innerHTML = json.definition;
+    document.getElementById("word").innerHTML = json.word;
 }
