@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    
 </head>
 <body>
-    <div data-role="page">
-        <div data-role="header">
+    <div>
+        <div>
             <h1>Culinary Quiz</h1>
         </div>
-        <div data-role="content">
+        <div>
             <fieldset style="border: 1px solid gray;">
-                <legend>Convert to:</legend>
-
+                <legend>Select a catetory of culinary terms</legend>
+                
+                <select name="" id="list">
+                    <option value="food">food</option>
+                    <option value="beverage">beverage</option>
+                    <option value="condiment">condiment</option>
+                </select>
             </fieldset>
+
+            <button>Build a Question</button>
+
         </div>
         
     </div>
     
-    <script src="/javascript/assignment5cJS.js"></script>
-    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
 </body>
 </html>
