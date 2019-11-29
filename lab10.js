@@ -3,8 +3,8 @@ var encryptedPassword="";
 
 function submitPassword(){
     var myXMLRequest = new XMLHttpRequest();
-    myXMLRequest.onload = displayPHPresults;
-    myXMLRequest.open("POST", "lab10.php?q=" + pass, true);
+    myXMLRequest.onload = displayPHPresults();
+    myXMLRequest.open("POST", "lab10.php" + pass, true);
 
     myXMLRequest.send();
 
@@ -14,7 +14,7 @@ function displayPHPresults(){
     var output = "";
     var data = this.responseText;
     if(data!="invalid"){
-        var newLocation = lacation + "#pageMessage";
+        var newLocation = location + "#pageMessage";
         window.location = newLocation;
         document.getElementById("secret").innerHTML = data;
     }
@@ -37,4 +37,5 @@ function clearPassword(){
     encryptedPassword = "";
     userPass.value = encryptedPassWord;
     document.getElementById("txtHint").innerHTML = "";
+    document.getElementById("password").value = "";
 }
