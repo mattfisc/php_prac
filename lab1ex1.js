@@ -2,12 +2,12 @@ var data = document.getElementById("data").addEventListener('click',myFunc);
 
 function myFunc(){
     var xhr = new XMLHttpRequest();
-    xhr.open('GET','play.tx',true);
+    xhr.open('GET','play.txt',true);
     xhr.onload = function(){
         if(xhr.status== 200){
-            document.write(this.responseText);
+            document.getElementById("display").innerHTML=xhr.responseText;
         }
-        else if(xhr.status == 404){
+        else{
             document.write("help file error");
         }
     }
