@@ -5,24 +5,31 @@ window.onload = function() {
 };
 */
 
+// BUTTON
 function fetchTerm() {
-    var part = document.getElementById("part").value;  // select which culinary topic to quiz about
-    var myXMLRequest = new XMLHttpRequest();
-    myXMLRequest.onload = createPossibleAnswers;
-    myXMLRequest.open("GET", "word.php?part=" + part, true); // send which topic is being quizzed
-    myXMLRequest.send();
+    // TOPIC
+    var li = document.getElementById("list").value;
+    
+    var xml = new XMLHttpRequest();
+    xml.onload = createQuestions();
+
+    // SEND
+    xml.open("GET", "word.php?li=" + li, true);
+    xml.send();
 }
 
-function createPossibleAnswers() {
-    //TASK 1: CLEAR OUT ANY PREVIOUS OUTPUT
-    document.getElementById("result").innerHTML = "";  // set the output to nothing
+function createQuestions() {
+    // CLEAR RESULTS
+    document.getElementById("result").innerHTML = "";
 
     var json = JSON.parse(this.responseText);
-    //TASK 1: GET THE WORD
+
+    // GET WORD
     document.getElementById("word").innerHTML = "What answer best applies to the " + json.part + ":  " + json.word;
 
-    //TASK 2: GET THE MULTIPLE CHOICE ANSWERS
+    //MULTIPLE COICES
     document.getElementById("choices").innerHTML = "";
+
     for (var i = 0; i < json.choices.length; i++) {
         var button = document.createElement("button");
         button.innerHTML = json.choices[i].definition;

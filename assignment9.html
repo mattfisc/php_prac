@@ -12,18 +12,24 @@
         <h1>Culinary Quiz</h1>
     </div>
     <div>
-        <fieldset>
-            <legend>Select a catetory of culinary terms</legend>
-            
-            <select name="" id="list">
-                <option value="food">food</option>
-                <option value="beverage">beverage</option>
-                <option value="condiment">condiment</option>
-            </select>
-        </fieldset>
-        <br>
+        <div>
+            <!--Selector for question-->
+            <fieldset>
+                <legend>Select a catetory of culinary terms</legend>
 
-        <button onclick="fetchTerm();"> Build a Question </button>
+                <select name="" id="list">
+                    <option value="food">food</option>
+                    <option value="beverage">beverage</option>
+                    <option value="condiment">condiment</option>
+                </select>
+            </fieldset>
+        </div>
+        <br>
+        <!--button -->
+        <div>
+            <button onclick="fetchTerm();"> Build a Question </button>
+
+        </div>
 
         <div>
             <h3 id="word"></h3>
