@@ -9,21 +9,23 @@ window.onload = function() {
 function fetchTerm() {
     // TOPIC
     var li = document.getElementById("list").value;
+
     
     var xhr = new XMLHttpRequest();
-    xhr.onload = createQuestions();
 
     // SEND
     xhr.open('GET', 'assignment9.php', true);
-    console.log(xhr);
+    
+    xhr.onload = createQuestions(xhr);
+
     xhr.send();
 }
-/*
-function createQuestions() {
+
+function createQuestions(xhr) {
     // CLEAR RESULTS
     document.getElementById("result").innerHTML = "";
 
-    var json = JSON.parse(this.responseText);
+    var json = JSON.parse(xhr.responseText);
 
     // GET WORD
     document.getElementById("word").innerHTML = "What answer best applies to the " + json.part + ":  " + json.word;
@@ -45,4 +47,3 @@ function showResult() {
     document.getElementById("result").innerHTML = "You are " + this.className;
     //fetchTerm();
 }
-*/
