@@ -14,7 +14,7 @@ function fetchTerm() {
     xml.onload = createQuestions();
 
     // SEND
-    xml.open("GET", "word.php?li=" + li, true);
+    xml.open("GET", "assignment9.php?li=" + li, true);
     xml.send();
 }
 
