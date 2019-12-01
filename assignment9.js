@@ -10,14 +10,15 @@ function fetchTerm() {
     // TOPIC
     var li = document.getElementById("list").value;
     
-    var xml = new XMLHttpRequest();
-    xml.onload = createQuestions();
+    var xhr = new XMLHttpRequest();
+    xhr.onload = createQuestions();
 
     // SEND
-    xml.open("GET", "assignment9.php?li=" + li, true);
-    xml.send();
+    xhr.open('GET', 'assignment9.php', true);
+    console.log(xhr);
+    xhr.send();
 }
-
+/*
 function createQuestions() {
     // CLEAR RESULTS
     document.getElementById("result").innerHTML = "";
@@ -44,3 +45,4 @@ function showResult() {
     document.getElementById("result").innerHTML = "You are " + this.className;
     //fetchTerm();
 }
+*/
