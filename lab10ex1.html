@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sarah Solares | Culinary Quiz</title>
+  <!-- CDNs include Mobile CSS and Core JavaScript files -->
+  <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <script type="text/javascript" src="lab10ex1.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- ************************************************************** -->
+  <!-- PAGE 1: LOGIN PAGE                                             -->
+  <!-- ************************************************************** -->
+  <div data-role="page" id="pageHome">
+    <div data-role="header">
+      <h1>Culinary Quiz</h1>
+    </div>
+    <div data-role="content">
+      <!--TEXTFIELD FOR INPUT PASSWORD -->
+
+      <fieldset>
+        <label for="selectTerm">  Select a category of culinary terms :</label>
+        <select name="term" id="term">
+            <option selected="selected">Food</option>
+            <option>Condiment</option>
+            <option>Beverage</option>
+          </select>
+        </fieldset>
+
+      <!--SUBMIT BUTTON -->
+      <button onclick="getQuestion();"> Build a Question</button><br>
+      <!-- DISPLAYS ANY NEEDED OUTPUT SUCH AS INVALID LOGIN           -->
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+
+</body>
+</html>
