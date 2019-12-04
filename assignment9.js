@@ -1,34 +1,25 @@
-/*
-window.onload = function() {
-	//TASK: FETCH A TERM
-	fetchTerm();
-};
-*/
+
 
 // BUTTON
 function fetchTerm() {
     // TOPIC
     var li = document.getElementById("list").value;
-
-    
     var xhr = new XMLHttpRequest();
 
     // SEND
     xhr.open('GET', 'assignment9.php', true);
-    
-    xhr.onload = createQuestions(xhr);
-
+    xhr.onload = createQuestions();
     xhr.send();
 }
 
-function createQuestions(xhr) {
+function createQuestions() {
     // CLEAR RESULTS
     document.getElementById("result").innerHTML = "";
 
-    var json = JSON.parse(xhr.responseText);
+    var json = JSON.parse(this.responseText);
 
     // GET WORD
-    document.getElementById("word").innerHTML = "What answer best applies to the " + json.part + ":  " + json.word;
+    document.getElementById("word").innerHTML = "What answer best applies to the " + json.term + ":  " + json.definition;
 
     //MULTIPLE COICES
     document.getElementById("choices").innerHTML = "";
@@ -37,13 +28,13 @@ function createQuestions(xhr) {
         var button = document.createElement("button");
         button.innerHTML = json.choices[i].definition;
         button.className = json.choices[i].correct ? "correct" : "incorrect";
-        button.onclick = showResult;
+        button.onclick = display();
         button.style.display = "block";
         document.getElementById("choices").appendChild(button);
     }
 }
 
-function showResult() {
+function display() {
     document.getElementById("result").innerHTML = "You are " + this.className;
     //fetchTerm();
 }

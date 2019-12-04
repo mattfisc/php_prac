@@ -5,6 +5,7 @@
   // SELECT TERM AND DEFINITION
   list($term, $category, $definition) = preg_split("/[\t]/", trim($line[array_rand($line)]));
 
+  
   //CREATE ARRAY
   $json = array(
     "definition" => $definition,
