@@ -1,14 +1,15 @@
-
+var answer = "";
+var defintion = "";
 
 // BUTTON
 function fetchTerm() {
     // TOPIC
     var li = document.getElementById("list").value;
     var xhr = new XMLHttpRequest();
-
+    xhr.onload = createQuestions;
     // SEND
     xhr.open('GET', 'assignment9.php', true);
-    xhr.onload = createQuestions();
+    
     xhr.send();
 }
 
