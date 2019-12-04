@@ -1,7 +1,7 @@
 function fetchFact() {
   var myXMLRequest = new XMLHttpRequest();
   myXMLRequest.onload = createWordDefinition;
-  myXMLRequest.open("GET", "lab10c.php", true);
+  myXMLRequest.open("GET", "lab10ex3.php", true);
   myXMLRequest.send();
 }
  
