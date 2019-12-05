@@ -1,6 +1,6 @@
 function fetchTerm() {
     var selectedCategory = document.getElementById("type").value;  // select which culinary topic to quiz about
-    //console.log(selectedCategory);
+    console.log(selectedCategory);
     var myXMLRequest = new XMLHttpRequest();
     myXMLRequest.onload = createPossibleAnswers;
     myXMLRequest.open("GET", "Assignment9.php?q="+selectedCategory, true); 
@@ -14,17 +14,10 @@ function createPossibleAnswers() {
     var json = JSON.parse(this.responseText);
     //TASK 1: GET THE WORD
     document.getElementById("word").innerHTML = "What answer best applies to the " + json.category + ":  " + json.fname;
-
     //TASK 2: GET THE MULTIPLE CHOICE ANSWERS
-    document.getElementById("choices").innerHTML = ""; // clears the choices area
-
-    // console.log(
-    //     json.choices[0].definition,
-    //     json.choices[1].definition,
-    //     json.choices[2].definition
-    //     );
-
+    document.getElementById("choices").innerHTML = ""; 
     for (var i = 0; i < json.choices.length; i++) {
+
         var button = document.createElement("button");
         button.innerHTML = json.choices[i].definition;
         button.className = json.choices[i].correct ? "correct" : "incorrect";

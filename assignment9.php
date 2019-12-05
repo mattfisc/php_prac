@@ -1,7 +1,7 @@
 <?php
 $selectedCategory = $_REQUEST['q'];  // food category that the user selected from the list
 //TASK 1: Open and read the file into array
-$line = file("culinaryQuizText.txt");
+$line = file("culinary.txt");
 do { // keep choosing new lines so long as the current line isn't the selected category
     list($food_name, $category, $true_definition) = preg_split("/[\t]/", trim($line[array_rand($line)]));
 } while ($category != $selectedCategory);
