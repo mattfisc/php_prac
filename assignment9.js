@@ -1,21 +1,27 @@
 function fetchTerm() {
-    var selectedCategory = document.getElementById("type").value;  // select which culinary topic to quiz about
-    console.log(selectedCategory);
-    var myXMLRequest = new XMLHttpRequest();
-    myXMLRequest.onload = createPossibleAnswers;
-    myXMLRequest.open("GET", "Assignment9.php?q="+selectedCategory, true); 
-    myXMLRequest.send();
+
+    // USER INPUT
+    var userInput = document.getElementById("type").value; 
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onload = createPossibleAnswers;
+    xhr.open("GET", "assignment9.php?q="+userInput, true); 
+    xhr.send();
 }
 
 function createPossibleAnswers() {
-    //TASK 1: CLEAR OUT ANY PREVIOUS OUTPUT
-    document.getElementById("result").innerHTML = "";  // set the output to nothing
-
-    var json = JSON.parse(this.responseText);
-    //TASK 1: GET THE WORD
-    document.getElementById("word").innerHTML = "What answer best applies to the " + json.category + ":  " + json.fname;
-    //TASK 2: GET THE MULTIPLE CHOICE ANSWERS
+    // CLEAR ALL
+    document.getElementById("word").innerHTML = "";
+    document.getElementById("result").innerHTML = "";
     document.getElementById("choices").innerHTML = ""; 
+
+    // ARRAY
+    var json = JSON.parse(this.responseText);
+    
+    // DISPLAY WORD
+    document.getElementById("word").innerHTML = "What answer best applies to the " + json.category + ":  " + json.fname;
+
+    // MULTIPLE CHOICE
     for (var i = 0; i < json.choices.length; i++) {
 
         var button = document.createElement("button");
@@ -27,6 +33,7 @@ function createPossibleAnswers() {
     }
 }
 
+// DISPLAY ANSWER
 function showResult() {
     document.getElementById("result").innerHTML = "You are " + this.className;
 
