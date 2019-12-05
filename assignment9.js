@@ -1,41 +1,40 @@
-var answer = "";
-var defintion = "";
-
-// BUTTON
 function fetchTerm() {
-    // TOPIC
-    var li = document.getElementById("list").value;
-    var xhr = new XMLHttpRequest();
-    xhr.onload = createQuestions;
-    // SEND
-    xhr.open('GET', 'assignment9.php', true);
-    
-    xhr.send();
+    var selectedCategory = document.getElementById("type").value;  // select which culinary topic to quiz about
+    //console.log(selectedCategory);
+    var myXMLRequest = new XMLHttpRequest();
+    myXMLRequest.onload = createPossibleAnswers;
+    myXMLRequest.open("GET", "Assignment9.php?q="+selectedCategory, true); 
+    myXMLRequest.send();
 }
 
-function createQuestions() {
-    // CLEAR RESULTS
-    document.getElementById("result").innerHTML = "";
+function createPossibleAnswers() {
+    //TASK 1: CLEAR OUT ANY PREVIOUS OUTPUT
+    document.getElementById("result").innerHTML = "";  // set the output to nothing
 
     var json = JSON.parse(this.responseText);
+    //TASK 1: GET THE WORD
+    document.getElementById("word").innerHTML = "What answer best applies to the " + json.category + ":  " + json.fname;
 
-    // GET WORD
-    document.getElementById("word").innerHTML = "What answer best applies to the " + json.term + ":  " + json.definition;
+    //TASK 2: GET THE MULTIPLE CHOICE ANSWERS
+    document.getElementById("choices").innerHTML = ""; // clears the choices area
 
-    //MULTIPLE COICES
-    document.getElementById("choices").innerHTML = "";
+    // console.log(
+    //     json.choices[0].definition,
+    //     json.choices[1].definition,
+    //     json.choices[2].definition
+    //     );
 
     for (var i = 0; i < json.choices.length; i++) {
         var button = document.createElement("button");
         button.innerHTML = json.choices[i].definition;
         button.className = json.choices[i].correct ? "correct" : "incorrect";
-        button.onclick = display();
+        button.onclick = showResult;
         button.style.display = "block";
         document.getElementById("choices").appendChild(button);
     }
 }
 
-function display() {
+function showResult() {
     document.getElementById("result").innerHTML = "You are " + this.className;
-    //fetchTerm();
+
 }
