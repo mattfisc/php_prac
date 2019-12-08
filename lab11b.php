@@ -1,5 +1,4 @@
 <?php
- 
 //TASK 1: MAKE A CONNECTION TO THE DATABASE, DISPLAY ERROR FOR FAILED CONNECTIONS
 //        Argument 1: IP address provided by GoDaddy
 //        Argument 2: Database user with access privileges
@@ -8,36 +7,29 @@
 //        Argument 5: Port for MySQL, which is not hosted locally.
 //NOTE: $mysqli = new mysqli("127.0.0.1", "username", "password", "database", 3306);
  
-$mysqli = new mysqli("localhost", "root", "", "cs222");
+
+$mysqli = new mysqli("localhost","root","","cs222");
 if ($mysqli->connect_errno) {
   echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
+//echo $mysqli->host_info . "\n";
  
-//TASK 2: BUILD A STRING CONTAININ A MYSQL INSTRUCTION TO SELECTING ALL RECORDS
-//        RETRIEVE DATA FROM QUERY STRING
-$name = $_GET['firstName'];
-$sql = "SELECT * FROM matt WHERE FirstName = '$name'";
+//TASK 2: GET FIRST NAME FROM THE FORM
+$myName = $_POST["myName"];
  
-//TASK 3: USE THE ESTABLISHED DATABASE CONNECTION TO PROCESS THE DATABASE QUERY.
-//        STORE THE RESULTS IN A VARIABLE.
+ 
+//TASK 3: SELECT ALL RECORDS WITH A MATCHING FIRST NAME
+//$sql = "SELECT email, firstName, lastName FROM Friends WHERE firstName=$myName";
+//$sql = "SELECT email, firstName, lastName FROM Friends WHERE firstName = 'carol'";
+$sql = "SELECT email, firstName, lastName FROM matt WHERE firstName = '$myName'";
+ 
 $result = $mysqli->query($sql);
  
-//TASK 4: BUILD A TABLE OF RESULTS IN A STRING
 if ($result->num_rows > 0) {
-  $myDisplayResults = "<table>";
-  $myDisplayResults .= "<tr>";
-  $myDisplayResults .= "<th>First Name</th>";
-  $myDisplayResults .= "<th>Last Name</th>";
-  $myDisplayResults .= "</tr>";
- 
+  // OUTPUT DATA FOR EACH ROW
   while($row = $result->fetch_assoc()) {
-    $myDisplayResults .= "<tr>";
-    $myDisplayResults .= "<td>$row[firstName]</td>";
-    $myDisplayResults .= "<td>$row[lastName]</td>";
-    $myDisplayResults .= "</tr>";
+    echo "email: " . $row["email"]. " - Name: " . $row["firstName"]. " " . $row["lastName"]. "<br>";
   }
-  $myDisplayResults .= "</table>";
-  echo $myDisplayResults;
 } else {
   echo "0 results";
 }
