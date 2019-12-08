@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+    <!--PAGE TWO-->
+    <div data-role="page" id="homePage">
+        <div data-role="header">
+            <h1>Login To Fitness Aide</h1>
+        </div>
+        <div data-role="content">
+            Email :<input type="text" id="password"><br>
+            
+            Password :<input type="password" id="password"><br>
+
+            <!--SUBMIT BUTTON -->
+            <button onclick="submitPassword();">Login In</button><br>
+            <!--SIGN UP BUTTON-->
+            <button onclick="signUp();">Sign Up</button>
+
+            <!--ENTER PASSWORD-->
+            <div>
+                <table>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(7)"> 7 </button></td>
+                        <td><button onclick="addDigitToPassword(8)"> 8 </button></td>
+                        <td><button onclick="addDigitToPassword(9)"> 9 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(4)"> 4 </button></td>
+                        <td><button onclick="addDigitToPassword(5)"> 5 </button></td>
+                        <td><button onclick="addDigitToPassword(6)"> 6 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(1)"> 1 </button></td>
+                        <td><button onclick="addDigitToPassword(2)"> 2 </button></td>
+                        <td><button onclick="addDigitToPassword(3)"> 3 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(0)">0 </button></td>
+                        <!--DELETE BUTTON-->
+                        <td><button onclick="deleteButton()">Delete</button></td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+    </div>
+        
+
+    <!--PAGE TWO-->
+    <div data-role="page" id="signUpPage">
+        <div data-role="header">
+            <h1> Sign-up for Fitness Aid</h1>
+        </div>
+        <div data-role="content">
+            First Name:
+            <input type="text" id="firstName">
+            Last Name:
+            <input type="text" id="lastName">
+            Email Address:
+            <input type="text" id="email">
+            Password (numberic values only):
+            <input type="text" id="password">
+
+            <button onclick="create_member()" id="submit">Sign Up</button>
+        </div>
+
+    </div>
+
+    <!--MEMBER PAGE-->
+    <div data-role="page" id="memberPage">
+        <div data-role="header">
+            <h1> Welcome new Member</h1>
+        </div>
+        <div data-role="content">
+            Muscle Group:
+            <input type="text" id="muscleInput">
+            
+            <button onclick="submitMuscleGroup()" id="submit">Sign Up</button>
+
+            <p id="displayMuscleGroup"></p>
+        </div>
+            
+    </div>
+
+    
+    
+    <script src="fitness.js"></script>
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>
