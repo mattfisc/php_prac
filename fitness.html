@@ -14,14 +14,19 @@
             <h1>Login To Fitness Aide</h1>
         </div>
         <div data-role="content">
-            Email :<input type="text" id="password"><br>
+            <form action="fitness.php" method="POST">
+                Email :<input type="text" id="userEmail"><br>
             
-            Password :<input type="password" id="password"><br>
+                Password :<input type="password" id="userPassword"><br>
+
+            </form>
 
             <!--SUBMIT BUTTON -->
-            <button onclick="submitPassword();">Login In</button><br>
+            <button onclick="submitPassword();">Login </button>
+            <br>
+
             <!--SIGN UP BUTTON-->
-            <button onclick="signUp();">Sign Up</button>
+            <button  onclick="signUp();">Sign Up</button>
 
             <!--ENTER PASSWORD-->
             <div>
@@ -55,19 +60,22 @@
     <!--PAGE TWO-->
     <div data-role="page" id="signUpPage">
         <div data-role="header">
-            <h1> Sign-up for Fitness Aid</h1>
+            <h1 id="result"> Sign-up for Fitness Aid</h1>
         </div>
         <div data-role="content">
-            First Name:
-            <input type="text" id="firstName">
-            Last Name:
-            <input type="text" id="lastName">
-            Email Address:
-            <input type="text" id="email">
-            Password (numberic values only):
-            <input type="text" id="password">
+            <form action="fitness.php" method="post">
+                First Name:
+                <input type="text" id="firstName" name="firstName">
+                Last Name:
+                <input type="text" id="lastName" name="lastName">
+                Email Address:
+                <input type="text" id="email" name="email">
+                Password (numberic values only):
+                <input type="password" id="password">
 
-            <button onclick="create_member()" id="submit">Sign Up</button>
+                <input type="submit" value="Submit">
+            </form>
+            
         </div>
 
     </div>

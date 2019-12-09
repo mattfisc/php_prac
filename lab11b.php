@@ -6,7 +6,7 @@
 //        Argument 4: Database Name
 //        Argument 5: Port for MySQL, which is not hosted locally.
 //NOTE: $mysqli = new mysqli("127.0.0.1", "username", "password", "database", 3306);
- 
+$myName = $_POST["myName"];
 
 $mysqli = new mysqli("localhost","root","","cs222");
 if ($mysqli->connect_errno) {
@@ -15,7 +15,7 @@ if ($mysqli->connect_errno) {
 //echo $mysqli->host_info . "\n";
  
 //TASK 2: GET FIRST NAME FROM THE FORM
-$myName = $_POST["myName"];
+
  
  
 //TASK 3: SELECT ALL RECORDS WITH A MATCHING FIRST NAME
