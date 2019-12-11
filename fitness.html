@@ -9,12 +9,12 @@
 </head>
 <body>
     <!--PAGE TWO-->
-    <div data-role="page" id="homePage">
+    <div data-role="page" id="signInPage">
         <div data-role="header">
             <h1>Login To Fitness Aide</h1>
         </div>
         <div data-role="content">
-            <form action="fitness.php" method="POST">
+            <form action="fitnessH.php" method="POST">
                 Email :<input type="text" id="userEmail"><br>
             
                 Password :<input type="password" id="userPassword"><br>
@@ -49,7 +49,9 @@
                     <tr>
                         <td><button onclick="addDigitToPassword(0)">0 </button></td>
                         <!--DELETE BUTTON-->
-                        <td><button onclick="deleteButton()">Delete</button></td>
+                        <td><button onclick="deleteOneDigit()">Delete</button></td>
+                        <!--CLEAR BUTTON-->
+                        <td><button onclick="clearPassword()">Clear</button></td>
                     </tr>
                 </table>
             </div> 
@@ -63,18 +65,19 @@
             <h1 id="result"> Sign-up for Fitness Aid</h1>
         </div>
         <div data-role="content">
-            <form action="fitness.php" method="post">
-                First Name:
-                <input type="text" id="firstName" name="firstName">
-                Last Name:
-                <input type="text" id="lastName" name="lastName">
-                Email Address:
-                <input type="text" id="email" name="email">
-                Password (numberic values only):
-                <input type="password" id="password">
+            
+            First Name:
+            <input type="text" id="firstName" name="firstName">
+            Last Name:
+            <input type="text" id="lastName" name="lastName">
+            Email Address:
+            <input type="text" id="email" name="email">
+            Password (numberic values only):
+            <input type="password" id="password">
 
-                <input type="submit" value="Submit">
-            </form>
+            <button onclick="create_member();" > Sign In</button>
+            
+            <div id="display"></div>
             
         </div>
 
@@ -99,7 +102,9 @@
     
     
     <script src="fitness.js"></script>
+    
     <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 </body>
 </html>

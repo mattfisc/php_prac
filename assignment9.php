@@ -50,7 +50,7 @@ $choices = array($first,$second,$correct);
 $json = array(
     "term" => $term,
     "food" => $food,
-    "choices"=>$choices
+    "correct"=>$correct
 );
 
 // RETURN JSON
