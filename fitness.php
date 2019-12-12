@@ -14,21 +14,29 @@ if ($mysqli->connect_errno) {
 
 
 // TEST IF MEMBER EXISTS BY EMAIL
-//$results = "SELECT * FROM `fitnesssignup` WHERE Email = $email";
+$test = "SELECT * FROM `fitnesssignup` WHERE Email = '".$email."' ";
 
-//$result = $mysqli->query($sql);
 
-// create member works
-$sql = "INSERT INTO fitnesssignup(`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('matthewasdf','asdf','asdf','3453')";
+// TEST 
+// MEMBER DOES NOT EXIST
+if($mysqli->query($test) === 0){
+  // CREATE MEMBER
+  $createMember = "INSERT INTO fitnesssignup (`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('".$firstName."','".$lastName."','".$email."','".$pass."')";
+  echo "Member created";
 
-//$result = $mysqli->query($sql);
-
-if ($mysqli->query($sql) === TRUE) {
-    echo "hello world created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $mysqli->error;
+  // RETURN SUCCESS
+  if ($mysqli->query($createMember) === TRUE) {
+    
+  } else {// RETURN ERROR
+    echo "Error: " . $createMember . "<br>" . $mysqli->error;
+  }
+}
+// MEMBER EXISTS
+else{
+  echo "member already has that email";
 }
 
+// CLOSE
 $mysqli->close();
 
 

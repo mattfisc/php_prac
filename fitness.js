@@ -55,7 +55,7 @@ function clearPassword(){
 // PAGE TWO-------------------------------------------
 // SIGN UP PAGE
 function create_member(){
-    
+    href = "#homePage";
 }
 function loginPage(){
     document.getElementById("display").innerHTML = this.responseText;
