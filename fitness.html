@@ -14,7 +14,7 @@
             <h1>Login To Fitness Aide</h1>
         </div>
         <div data-role="content">
-            <form action="fitnessH.php" method="POST">
+            <form action="fitnessH.php" method="get">
                 Email :<input type="text" id="userEmail"><br>
             
                 Password :<input type="password" id="userPassword"><br>
@@ -66,19 +66,23 @@
         </div>
         <div data-role="content">
             
-            First Name:
-            <input type="text" id="firstName" name="firstName">
-            Last Name:
-            <input type="text" id="lastName" name="lastName">
-            Email Address:
-            <input type="text" id="email" name="email">
-            Password (numberic values only):
-            <input type="password" id="password">
+            <form action="fitness.php" method="get">
 
-            <button onclick="create_member();" > Sign In</button>
-            
-            <div id="display"></div>
-            
+                First Name:
+                <input type="text" id="firstName" name="firstName">
+                Last Name:
+                <input type="text" id="lastName" name="lastName">
+                Email Address:
+                <input type="text" id="email" name="email">
+                Password (numberic values only):
+                <input type="password" id="pass" name="pass">
+    
+                <button onclick="create_member()" > Sign In</button>
+                
+                <div id="display"></div>
+                    
+
+            </form>
         </div>
 
     </div>

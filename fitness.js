@@ -55,34 +55,7 @@ function clearPassword(){
 // PAGE TWO-------------------------------------------
 // SIGN UP PAGE
 function create_member(){
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
-    // CREATE JSON OBJECT
-    var obj = {
-        "fName": firstName,
-        "lName": lastName,
-        "em": email,
-        "pass": password
-    }
-
-    // CREATE JSON STRING
-    var str = JSON.stringify(obj);
-    //alert(str);
-
-    var hw = "hello world";
     
-
-    // RETURN JSON STRING
-    var request = new XMLHttpRequest();
-    request.onload = loginPage;
-    request.open("GET", "fitness.php?q=" + hw, true);
-    request.send();
-
-    // THIRD WAY WAS IN HTML CREATING A FORM AND BYPASSING THE WHOLE XML REQUEST
-
 }
 function loginPage(){
     document.getElementById("display").innerHTML = this.responseText;
