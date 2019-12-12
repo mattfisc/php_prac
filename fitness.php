@@ -18,7 +18,7 @@ if ($mysqli->connect_errno) {
 
 //$result = $mysqli->query($sql);
 
-
+// create member works
 $sql = "INSERT INTO fitnesssignup(`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('matthewasdf','asdf','asdf','3453')";
 
 //$result = $mysqli->query($sql);
