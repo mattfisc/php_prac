@@ -6,24 +6,12 @@ var encryptedPassword="";
 // SUBMIT PASSWORD TO PHP
 // TO SIGN INTO MEMBER PAGE
 // lab 10 example---------------------------
-function submitPassword(){
-    var email = document.getElementById("userEmail").innerHTML;
-    var pass = document.getElementById("UserPassword").innerHTML;
 
-    // XHR REQUEST
-}
 
-function memberPage(){  
-    // GO TO MEMBER PAGE
-    newLocation = oldlocation + "#memberPage";
-    window.location = newLocation;
-
-}
 // SWITCH TO SIGN UP PAGE
 function signUp(){
     
-    newLocation = location + "#signUpPage";
-    window.location = newLocation;
+    window.location.href = 'http://localhost/fitness.html' + '#signUp';
     
 }
 
@@ -39,36 +27,50 @@ function addDigitToPassword(num){
 function deleteOneDigit(){
     pass = pass.substring(0,len(pass));
     encryptedPassword = encryptedPassword.substring(0,len(encryptedPassword));
+    
+    document.getElementById("userPassword").value = encryptedPassword;
 }
 
 // CLEAR PASSWORD
 function clearPassword(){
-    var userPass = document.getElementById("userPassword");
+    document.getElementById("userPassword").value = "";
     pass = ""
     encryptedPassword = "";
-    userPass.value = encryptedPassWord;
-    document.getElementById("txtHint").innerHTML = "";
-    document.getElementById("password").value = "";
+
 }
 
 
 // PAGE TWO-------------------------------------------
 // SIGN UP PAGE
-function create_member(){
-    href = "#homePage";
-}
+
 function loginPage(){
-    document.getElementById("display").innerHTML = this.responseText;
+    
 }
 
 // PAGE THREE-------------------------------------------
 // MEMBER PAGE
 function submitMuscleGroup(){
-    // GET WORK OUTS
-    var muscleGroup = document.getElementById("muscleInput")
+    var input = document.getElementById("muscleInput").value;
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onload = createList;
+    xhr.open("GET", "member.php?q=" + input, true); 
+    xhr.send();
 
-    // GET DISPLAY
-    var display = document.getElementById("displayMuscleGroup").innerHTML;
-    // DISPLAY ON HTML
-    display = "";
+}
+
+function createList(){
+
+// ARRAY
+    //var json = JSON.parse(this.responseText);
+
+    // MULTIPLE CHOICE
+    for (var i = 0; i < json.choices.length; i++) {
+
+        var option = document.createElement("option");
+        option.innerHTML = json.choices[i].definition;
+        
+        
+    }
+
 }

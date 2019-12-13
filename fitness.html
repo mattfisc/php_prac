@@ -9,22 +9,25 @@
 </head>
 <body>
     <!--PAGE TWO-->
-    <div data-role="page" id="signInPage">
+    <div data-role="page" id="homepage">
         <div data-role="header">
             <h1>Login To Fitness Aide</h1>
         </div>
-        <div data-role="content">
-            <form action="fitnessH.php" method="get">
-                Email :<input type="text" id="userEmail"><br>
-            
-                Password :<input type="password" id="userPassword"><br>
 
+        <div data-role="content">
+            <div id="display">
+            </div>
+
+            <form action="login.php" method="get">
+
+                Email :<input type="text" name="userEmail" id="userEmail" required><br>
+                Password :<input type="password" name="userPass" id="userPass" required><br>
+
+                <input type="submit" value="Login">
             </form>
 
             <!--SUBMIT BUTTON -->
-            
-            <button onclick="submitPassword();">Login </button>
-        
+ 
             <br>
 
             <!--SIGN UP BUTTON-->
@@ -63,29 +66,26 @@
         
 
     <!--PAGE TWO-->
-    <div data-role="page" id="signUpPage">
+    <div data-role="page" id="signUp">
         <div data-role="header">
             <h1 id="result"> Sign-up for Fitness Aid</h1>
         </div>
         <div data-role="content">
             
-            <form action="fitness.php" method="get">
+            <form action="register.php" method="get">
 
                 First Name:
-                <input type="text" id="firstName" name="firstName">
+                <input type="text" id="firstName" name="firstName" required>
                 Last Name:
-                <input type="text" id="lastName" name="lastName">
+                <input type="text" id="lastName" name="lastName" required>
                 Email Address:
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" name="email" required>
                 Password (numberic values only):
-                <input type="password" id="pass" name="pass">
+                <input type="password" id="pass" name="pass" required>
 
-            
-                <button onclick="create_member()" > Submit</button>
-                
+                <input type="submit" value="Submit">
                 
                 <div id="display"></div>
-                    
 
             </form>
         </div>
@@ -93,15 +93,29 @@
     </div>
 
     <!--MEMBER PAGE-->
-    <div data-role="page" id="memberPage">
+    <div data-role="page" id="memberPage" >
         <div data-role="header">
             <h1> Welcome new Member</h1>
         </div>
         <div data-role="content">
             Muscle Group:
-            <input type="text" id="muscleInput">
+            <select name="muscleInput" id="muscleInput">
+                <option value="Calves">Calves</option>
+                <option value="Quadriceps">Quadriceps</option>
+                <option value="Hamstrings">Hamstrings</option>
+                <option value="Gluteus">Gluteus</option>
+                <option value="Hips">Hips</option>
+                <option value="Lower Back">Lower Back</option>
+                <option value="Lats">Lats</option>
+                <option value="Trapezius">Trapezius</option>
+                <option value="Abdominals">Abdominals</option>
+                <option value="Pectorals">Pectorals</option>
+                <option value="Deltoids">Deltoids</option>
+                <option value="Triceps">Triceps</option>
+                <option value="Biceps">Biceps</option>
+            </select>
             
-            <button onclick="submitMuscleGroup()" id="submit">Sign Up</button>
+            <button onclick="submitMuscleGroup()" id="submit">Select Muscle</button>
 
             <p id="displayMuscleGroup"></p>
         </div>
