@@ -1,16 +1,13 @@
 var pass = "";
 var encryptedPassword="";
 
-// HOME PAGE----------------------------------------
+// HOMEPAGE-------------------
 
 // SUBMIT PASSWORD TO PHP
 // TO SIGN INTO MEMBER PAGE
-// lab 10 example---------------------------
-
 
 // SWITCH TO SIGN UP PAGE
 function signUp(){
-    
     window.location.href = 'http://localhost/fitness.html' + '#signUp';
     
 }
@@ -18,7 +15,7 @@ function signUp(){
 // ADD PASSWORD
 function addDigitToPassword(num){
     pass += num;
-    var userPassword = document.getElementById("userPassword");
+    var userPassword = document.getElementById("userPass");
     encryptedPassword += "*";
     userPassword.value = encryptedPassword;
 }
@@ -28,29 +25,30 @@ function deleteOneDigit(){
     pass = pass.substring(0,len(pass));
     encryptedPassword = encryptedPassword.substring(0,len(encryptedPassword));
     
-    document.getElementById("userPassword").value = encryptedPassword;
+    document.getElementById("userPass").value = encryptedPassword;
 }
 
 // CLEAR PASSWORD
 function clearPassword(){
-    document.getElementById("userPassword").value = "";
+    document.getElementById("userPass").value = "";
     pass = ""
     encryptedPassword = "";
 
 }
 
 
-// PAGE TWO-------------------------------------------
+// PAGE TWO--------------------
 // SIGN UP PAGE
 
 function loginPage(){
     
 }
 
-// PAGE THREE-------------------------------------------
+// PAGE THREE--------------------------
 // MEMBER PAGE
 function submitMuscleGroup(){
     var input = document.getElementById("muscleInput").value;
+    
     
     var xhr = new XMLHttpRequest();
     xhr.onload = createList;
@@ -63,14 +61,8 @@ function createList(){
 
 // ARRAY
     //var json = JSON.parse(this.responseText);
-
-    // MULTIPLE CHOICE
-    for (var i = 0; i < json.choices.length; i++) {
-
-        var option = document.createElement("option");
-        option.innerHTML = json.choices[i].definition;
-        
-        
-    }
+    var json = this.responseText;
+    document.getElementById("displayMuscleGroup").innerHTML = json;
+    
 
 }
