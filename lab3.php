@@ -1,6 +1,6 @@
 <?php
 
-$var = $_POST('q');
+$Var = $_POST["q"];
 echo $var;
 
 ?>
