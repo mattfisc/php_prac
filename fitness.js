@@ -7,8 +7,8 @@ var encryptedPassword="";
 // TO SIGN INTO MEMBER PAGE
 
 // SWITCH TO SIGN UP PAGE
-function signUp(){
-    window.location.href = 'http://localhost/fitness.html' + '#signUp';
+function register(){
+    window.location.href = window.location + '#signUp';
     
 }
 
@@ -52,7 +52,7 @@ function submitMuscleGroup(){
     
     var xhr = new XMLHttpRequest();
     xhr.onload = createList;
-    xhr.open("GET", "member.php?q=" + input, true); 
+    xhr.open("GET", "fitness.php?q=" + input, true); 
     xhr.send();
 
 }
@@ -65,4 +65,14 @@ function createList(){
     document.getElementById("displayMuscleGroup").innerHTML = json;
     
 
+}
+
+function signUp(){
+    var input = document.getElementById("muscleInput").value;
+    
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onload = createList;
+    xhr.open("POST", "fitness.php",true); 
+    xhr.send(q=input);
 }

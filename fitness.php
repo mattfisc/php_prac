@@ -1,6 +1,6 @@
 <?php
 
-$var = $_GET['q'];
+$var = $_REQUEST['q'];
 echo $var;
 
 ?>
