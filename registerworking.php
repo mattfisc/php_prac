@@ -22,24 +22,38 @@ $check = mysqli_query($mysqli,$test);
 $num = mysqli_num_rows($check);
 
 if($num == 1){
-  header('location:fitness.html#signUp');
   echo "Member email taken.  Try again! <br>";
 }else{
-  header('location:fitness.html#homepage');
   echo "Creating Member... <br>";
   // QUERY STRING FOR MEMBER
   $createMember = "INSERT INTO fitnesssignup (`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('".$firstName."','".$lastName."','".$email."','".$pass."')";
-
-  $message = "Member created!<br>Try to login in";
-  
-
+    echo "Member created";
   // CREATE MEMBER
   if ($mysqli->query($createMember) === TRUE) {
     
   } else {// RETURN ERROR
-    $message = "Member already exists";
+    echo "Error: " . $createMember . "<br>" . $mysqli->error;
   }
 }
+/*
+// TEST 
+// MEMBER DOES NOT EXIST
+if($mysqli->query($test) <= 0){
+  // CREATE MEMBER
+  
 
+
+  
+}
+// MEMBER EXISTS
+else{
+  echo "member already has that email";
+ 
+}
+
+// CLOSE
+$mysqli->close();
+
+*/
 
   ?>

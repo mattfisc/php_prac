@@ -19,7 +19,7 @@ if ($mysqli->connect_errno) {
 //$result = $mysqli->query($test);
 
 
-$result = mysqli_query($mysqli,"SELECT * FROM `workout` WHERE Muscle = '".$input."'");
+$result = mysqli_query($mysqli,"SELECT * FROM `workout` WHERE Muscle = '" .$input. "'" );
 
 while($row = mysqli_fetch_array($result))
 echo $row['Exercises'];
