@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--PAGE TWO-->
+    <div data-role="page" id="signInPage">
+        <div data-role="header">
+            <h1>Login To Fitness Aide</h1>
+        </div>
+        <div data-role="content">
+            <form action="fitnessMember.php" method="post">
+                
+                    Email :<input type="text" id="userEmail"><br>
+            
+                    Password :<input type="password" id="userPassword"><br>
+    
+
+            </form>
+
+            <!--SUBMIT BUTTON -->
+            <button onclick="submitPassword();">Login </button>
+            <br>
+
+            <!--SIGN UP BUTTON-->
+            <button  onclick="signUp();">Sign Up</button>
+
+            <!--ENTER PASSWORD-->
+            <div>
+                <table>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(7)"> 7 </button></td>
+                        <td><button onclick="addDigitToPassword(8)"> 8 </button></td>
+                        <td><button onclick="addDigitToPassword(9)"> 9 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(4)"> 4 </button></td>
+                        <td><button onclick="addDigitToPassword(5)"> 5 </button></td>
+                        <td><button onclick="addDigitToPassword(6)"> 6 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(1)"> 1 </button></td>
+                        <td><button onclick="addDigitToPassword(2)"> 2 </button></td>
+                        <td><button onclick="addDigitToPassword(3)"> 3 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(0)">0 </button></td>
+                        <!--DELETE BUTTON-->
+                        <td><button onclick="deleteOneDigit()">Delete</button></td>
+                        <!--CLEAR BUTTON-->
+                        <td><button onclick="clearPassword()">Clear</button></td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+    </div>
+        
+
+</body>
+</html>

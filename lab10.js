@@ -1,41 +1,39 @@
 var pass = "";
-var encryptedPassword="";
+//var encryptedPassword="";
 
 function submitPassword(){
-    var myXMLRequest = new XMLHttpRequest();
-    myXMLRequest.onload = displayPHPresults();
-    myXMLRequest.open("POST", "lab10.php" + pass, true);
+    const xhr = new XMLHttpRequest();
+    
 
-    myXMLRequest.send();
-
-}
-
-function displayPHPresults(){
-    var output = "";
-    var data = this.responseText;
-    if(data!="invalid"){
-        var newLocation = location + "#pageMessage";
-        window.location = newLocation;
-        document.getElementById("secret").innerHTML = data;
+    xhr.onload = function(){
+        var output = "";
+        var data = this.responseText;
+        if(data!="invalid"){
+            document.getElementById("secret").innerHTML = data;
+        }
+        else{
+            output = "The password you entered is invalid. Please try again";
+            document.getElementById("txtHint").innerHTML = output;
+        }
     }
-    else{
-        output = "The password you entered is invalid. Please try again";
-        document.getElementById("txtHint").innerHTML = output;
-    }
+
+    xhr.open("POST", "lab10.php");
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("p=".pass);
+
 }
 
 function addDigitToPassword(num){
     pass += num;
-    var userPassword = document.getElementById("password");
-    encryptedPassword += "*";
-    userPassword.value = encryptedPassword;
+    
+    //encryptedPassword += "*";
+    document.getElementById("password").value = pass;
 }
 
 function clearPassword(){
-    var userPass = document.getElementById("password");
+    
     pass = ""
     encryptedPassword = "";
-    userPass.value = encryptedPassWord;
     document.getElementById("txtHint").innerHTML = "";
     document.getElementById("password").value = "";
 }

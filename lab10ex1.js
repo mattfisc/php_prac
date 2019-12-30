@@ -1,8 +1,8 @@
 function getQuestion () {
-    var myXMLRequest = new XMLHttpRequest();
-  
-    myXMLRequest.open("GET", "lab10ex1.php", true);
-    myXMLRequest.send();
+    var xhr = new XMLHttpRequest();
+    xhr.onload = createRandWordDef();
+    xhr.open("GET", "lab10ex1.php", true);
+    xhr.send();
   
   }
   

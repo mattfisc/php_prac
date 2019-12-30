@@ -7,7 +7,7 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
   }
 
-$myName = $_POST["myName"];
+//$myName = $_POST["myName"];
 
 if($myName != null){
     $sql = "SELECT FirstName, LastName, Email FROM matt WHERE FirstName = '$myName'";
@@ -17,6 +17,10 @@ else{
 }
 
 $result = $mysqli->query($sql);
+
+
+// build table
+
 
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){

@@ -5,24 +5,21 @@
   <title>Secret Message App</title>
   <!-- CDNs include Mobile CSS and Core JavaScript files -->
   <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-  <script type="text/javascript" src="lab10.js"></script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <!-- ************************************************************** -->
-  <!-- PAGE 1: LOGIN PAGE                                             -->
-  <!-- ************************************************************** -->
-  <div data-role="page" id="pageHome">
+
+  <!-- PAGE 1: LOGIN PAGE -->
+
+  <div data-role="page" id="homePage">
     <div data-role="header">
       <h1>Login To Secret Message</h1>
     </div>
     <div data-role="content">
       <!--TEXTFIELD FOR INPUT PASSWORD -->
-      Password :<input type="password" id="password"><br>
+      Password :<input type="password" id="password" required><br>
 
       <!--SUBMIT BUTTON -->
       <button onclick="submitPassword();"> Login</button><br>
@@ -60,11 +57,9 @@
 
 
 
-  <!-- ************************************************************** -->
-  <!-- PAGE 2: PAGE CONTAINING THE SECRET MESSAGE                     -->
-  <!--         THIS PAGE WILL ACTIVATE ONLY IF A                      -->
-  <!--         VALID PASSWORD IS ENTERED                              -->
-  <!-- ************************************************************** -->
+ 
+  <!-- PAGE 2 -->
+       
   <div data-role="page" id="pageMessage">
     <div data-role="header">
       <h1>Secret Message Page</h1>
@@ -74,5 +69,9 @@
     </div>
   </div>
 
+  <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="lab10.js"></script>
+  
 </body>
 </html>

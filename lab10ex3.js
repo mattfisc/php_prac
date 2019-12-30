@@ -3,6 +3,7 @@ function fetchFact() {
   myXMLRequest.onload = createWordDefinition;
   myXMLRequest.open("GET", "lab10ex3.php", true);
   myXMLRequest.send();
+  
 }
  
 function createWordDefinition(){
