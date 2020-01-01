@@ -1,7 +1,7 @@
 <?php
 
-$car = $_POST("userEmail");
 
-echo $car;
+
+print_r($_POST);
 
 ?>
