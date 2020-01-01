@@ -1,4 +1,5 @@
 <?php
+var_dump($GLOBALS);
 
 $first = $_POST['first'];
 $last = $_POST['last'];
