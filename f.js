@@ -5,11 +5,6 @@ var pass = "";
 // SUBMIT PASSWORD TO PHP
 // TO SIGN INTO MEMBER PAGE
 
-// SWITCH TO SIGN UP PAGE
-function register(){
-    window.location.href = window.location + '#signUp';
-    
-}
 
 // ADD PASSWORD
 function addDigitToPassword(num){
@@ -49,7 +44,7 @@ function submitMuscleGroup(){
     
     var xhr = new XMLHttpRequest();
     xhr.onload = createList;
-    xhr.open("GET", "fitness.php?q=" + input, true); 
+    xhr.open("GET", "mem.php?q=" + input, true); 
     xhr.send();
 
 }
@@ -62,12 +57,3 @@ function createList(){
     document.getElementById("displayMuscleGroup").innerHTML = json;
 }
 
-function signUp(){
-    var input = document.getElementById("firstName").value;
-    var summary = document.getElementById("")
-    
-    var xhr = new XMLHttpRequest();
-    xhr.onload = createList;
-    xhr.open("POST", "fitness.php",true); 
-    xhr.send(input);
-}

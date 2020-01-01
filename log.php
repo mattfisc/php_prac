@@ -24,13 +24,13 @@ if($check->num_rows > 0){
     while($row = $check->fetch_assoc()){
         if($row['Email']=== $email && $row['Pass']=== $pass){
             // CHANGE PAGE
-            header('location:fitness.html#memberPage');
+            header('location:f.html#memberPage');
         }
     }
 }
 else{
     // CHANGE PAGE
-    header('location:fitness.html#homepage');
+    header('location:f.html#homepage');
     echo "Failed to login! Try registering first!";
 }
 

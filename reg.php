@@ -23,23 +23,23 @@ $check = mysqli_query($mysqli,$test);
 $num = mysqli_num_rows($check);
 
 if($num == 1){
-  header('location:fitness.html#signUp');
+  header('location:f_p1.html');
   echo "Member email taken.  Try again! <br>";
 }else{
-  header('location:fitness.html#homepage');
+  header('location:f_p2.html');
   echo "Creating Member... <br>";
   // QUERY STRING FOR MEMBER
   $createMember = "INSERT INTO fitnesssignup (`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('".$firstName."','".$lastName."','".$email."','".$pwd."')";
 
   $message = "Member created!<br>Try to login in";
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  //echo "<script type='text/javascript'>alert('$message');</script>";
 
   // CREATE MEMBER
   if ($mysqli->query($createMember) === TRUE) {
     
   } else {// RETURN ERROR
     $message = "Member already exists";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
 
   }
 }
