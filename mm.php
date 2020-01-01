@@ -1,11 +1,13 @@
 <?php
-var_dump($GLOBALS);
+//var_dump($GLOBALS);
 
 $first = $_POST['first'];
 $last = $_POST['last'];
 $email = $_POST['email'];
-
 $pwd = $_POST['pwd'];
+
+echo $first;
+
 
 $mysqli = new mysqli("localhost","root","","cs222");
 if ($mysqli->connect_errno) {

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+    <!--PAGE TWO-->
+    <div data-role="page" id="homepage">
+        <div data-role="header">
+            <h1>Login To Fitness Aide</h1>
+        </div>
+
+        <div data-role="content">
+            <div id="display"></div>
+
+            <form action="log.php" method="post">
+
+                Email :<input type="text" name="userEmail" id="userEmail" required><br>
+                Password :<input type="password" name="userPwd" id="userPwd" required><br>
+
+                <!--SUBMIT BUTTON -->
+                <input type="submit" value="Login">
+            </form>
+
+            <br>
+            <!--SIGN UP BUTTON-->
+            <button onclick="register();">Sign Up</button>
+
+            <!--ENTER PASSWORD-->
+            <div>
+                <table>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(7)"> 7 </button></td>
+                        <td><button onclick="addDigitToPassword(8)"> 8 </button></td>
+                        <td><button onclick="addDigitToPassword(9)"> 9 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(4)"> 4 </button></td>
+                        <td><button onclick="addDigitToPassword(5)"> 5 </button></td>
+                        <td><button onclick="addDigitToPassword(6)"> 6 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(1)"> 1 </button></td>
+                        <td><button onclick="addDigitToPassword(2)"> 2 </button></td>
+                        <td><button onclick="addDigitToPassword(3)"> 3 </button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addDigitToPassword(0)">0 </button></td>
+                        <!--DELETE BUTTON-->
+                        <td><button onclick="deleteOneDigit()">Delete</button></td>
+                        <!--CLEAR BUTTON-->
+                        <td><button onclick="clearPassword()">Clear</button></td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+    </div>
+        
+
+    <!--PAGE TWO-->
+    <div data-role="page" id="signUp">
+
+        <div data-role="header">
+            <h1 id="result"> Sign-up for Fitness Aid</h1>
+        </div>
+
+        <div data-role="content">
+
+            <div id="message"></div>
+
+            <form action="reg.php" method="post">
+
+                First Name:
+                <input type="text" id="firstName" name="firstName" required>
+
+                Last Name:
+                <input type="text" id="lastName" name="lastName" required>
+
+                Email Address:
+                <input type="text" id="email" name="email" required>
+
+                Password (numberic values only):
+                <input type="password" id="pwd" name="pwd" required>
+
+                <!--Button-->
+                <input onclick="signUp();" type="submit" value="Submit">
+
+            </form>
+        </div>
+    </div>
+
+    <!--MEMBER PAGE-->
+    <div data-role="page" id="memberPage" >
+
+        <div data-role="header">
+            <h1> Welcome new Member</h1>
+        </div>
+
+        <div data-role="content">
+
+            <div id="m"></div>
+
+            Muscle Group:
+            <select name="muscleInput" id="muscleInput">
+                <option value="Calves">Calves</option>
+                <option value="Quadriceps">Quadriceps</option>
+                <option value="Hamstrings">Hamstrings</option>
+                <option value="Gluteus">Gluteus</option>
+                <option value="Hips">Hips</option>
+                <option value="Lower Back">Lower Back</option>
+                <option value="Lats">Lats</option>
+                <option value="Trapezius">Trapezius</option>
+                <option value="Abdominals">Abdominals</option>
+                <option value="Pectorals">Pectorals</option>
+                <option value="Deltoids">Deltoids</option>
+                <option value="Triceps">Triceps</option>
+                <option value="Biceps">Biceps</option>
+            </select>
+            
+            <!--Button-->
+            <button onclick="submitMuscleGroup()" id="submit">Select Muscle</button>
+
+            <p id="displayMuscleGroup"></p>
+        </div>
+            
+    </div>
+
+    
+    
+    <script src="f.js"></script>
+    
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+</body>
+</html>
