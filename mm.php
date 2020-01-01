@@ -3,7 +3,7 @@
 $first = $_POST['first'];
 $last = $_POST['last'];
 $email = $_POST['email'];
-$uid = $_POST['uid'];
+
 $pwd = $_POST['pwd'];
 
 $mysqli = new mysqli("localhost","root","","cs222");

@@ -1,8 +1,8 @@
 <?php
 
 
-$email = $_GET['userEmail'];
-$pass= $_GET['userPass'];
+$email = $_POST['userEmail'];
+$pass= $_POST['userPass'];
 
 
 //NOTE: godaddy

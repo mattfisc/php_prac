@@ -1,10 +1,12 @@
 <?php
 
 // create member
-$firstName = $_GET['firstName'];
-$lastName = $_GET['lastName'];
-$email = $_GET['email'];
-$pass= $_GET['pass'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$pass= $_POST['pass'];
+
+echo $firstName;
 
 //NOTE: $mysqli = new mysqli("127.0.0.1", "username", "password", "database", 3306);
 $mysqli = new mysqli("localhost","root","","cs222");
