@@ -1,7 +1,7 @@
 <?php
 
 
+var_dump($GLOBALS);
 
-print_r($_POST);
 
 ?>
