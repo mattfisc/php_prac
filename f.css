@@ -1,17 +1,27 @@
 body {
     background-color: aliceblue;
+    width: 100%;
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
 }
 
 input {
-    width: 500px;
-    background-color: lightgray;
+    width: 100%;
+    background-color: darkgray;
     color: black;
 }
 
 button {
-    width: 50px;
+    width: 60px;
     background-color: darkgray;
+
     color: black;
+    padding: 2px;
+  
+    font-weight: bold;
 }
 
 #login {
@@ -20,8 +30,20 @@ button {
 
 #signUp {
     width: 100px;
+    padding-left: 2px;
 }
 a {
     text-decoration: none;
     color: black;
+}
+
+table {
+    padding: 0px;
+    margin: 0px;
+
+}
+div {
+    padding: 0px;
+    margin: 0px;
+    
 }
