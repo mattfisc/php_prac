@@ -9,7 +9,7 @@ var pass = "";
 // ADD PASSWORD
 function addDigitToPassword(num){
     pass += num;
-    var userPassword = document.getElementById("userPass");
+    var userPassword = document.getElementById("userPwd");
     userPassword.value = encryptedPassword;
 }
 
@@ -18,12 +18,12 @@ function deleteOneDigit(){
     pass = pass.substring(0,len(pass));
     encryptedPassword = encryptedPassword.substring(0,len(encryptedPassword));
     
-    document.getElementById("userPass").value = encryptedPassword;
+    document.getElementById("userPwd").value = encryptedPassword;
 }
 
 // CLEAR PASSWORD
 function clearPassword(){
-    document.getElementById("userPass").value = "";
+    document.getElementById("userPwd").value = "";
     pass = ""
 
 }

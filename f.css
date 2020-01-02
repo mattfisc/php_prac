@@ -1,7 +1,27 @@
+body {
+    background-color: aliceblue;
+}
+
 input {
     width: 500px;
+    background-color: lightgray;
+    color: black;
 }
 
 button {
-    color: green;
+    width: 50px;
+    background-color: darkgray;
+    color: black;
+}
+
+#login {
+    width: 100px;
+}
+
+#signUp {
+    width: 100px;
+}
+a {
+    text-decoration: none;
+    color: black;
 }
