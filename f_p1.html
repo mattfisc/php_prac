@@ -13,10 +13,19 @@
         <div class="header">
             <h1>Login To Fitness Aide</h1>
         </div>
-
+        
         <div class="content">
             <!--DISPLAY MESSAGE-->
-            <div id="message"></div>
+            
+            <div id="message">
+                <?php
+                    $fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                    if(strpos($fullUrl, "signup=empty") == true){
+                        
+                    }
+                ?>
+            </div>
 
             <form action="log.php" method="post">
 
