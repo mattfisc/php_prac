@@ -21,13 +21,14 @@ $test = "SELECT * FROM `fitnesssignup` WHERE Email = '$email' ";
 $check = mysqli_query($mysqli,$test);
 // NUMBER OF ROWS IN QUERY FOUND
 $num = mysqli_num_rows($check);
-
+echo "<p>Member email taken.  Try again! <br></p>";
 if($num == 1){
-  header('location:f_p1.html');
-  echo "Member email taken.  Try again! <br>";
-}else{
   header('location:f_p2.html');
+  echo "<p>Member email taken.  Try again! <br></p>";
+}else{
+  header('location:f_p1.html');
   echo "Creating Member... <br>";
+  echo "<p>Creating Member...</p>";
   // QUERY STRING FOR MEMBER
   $createMember = "INSERT INTO fitnesssignup (`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('".$firstName."','".$lastName."','".$email."','".$pwd."')";
 
