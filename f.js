@@ -9,8 +9,7 @@ var pass = "";
 // ADD PASSWORD
 function addDigitToPassword(num){
     pass += num;
-    var userPassword = document.getElementById("userPwd");
-    userPassword.value = encryptedPassword;
+    var userPassword = document.getElementById("userPwd").value = pass;
 }
 
 // DELETE ONE DIGIT OF PASSWORD

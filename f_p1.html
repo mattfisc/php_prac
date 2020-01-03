@@ -15,21 +15,22 @@
         </div>
 
         <div class="content">
-            <div id="display"></div>
+            <!--DISPLAY MESSAGE-->
+            <div id="message"></div>
 
             <form action="log.php" method="post">
 
-                Email :<br><input type="text" name="userEmail" id="userEmail" required><br>
-                Password :<br><input type="password" name="userPwd" id="userPwd" required><br>
+                <input type="text" name="userEmail" id="userEmail" placeholder="Email" required><br>
+                <input type="password" name="userPwd" id="userPwd" placeholder="Password" required><br>
 
                 <!--SUBMIT BUTTON -->
-                
-                <input id="login" type="submit" value="Login">
+                <br>
+                <input class="button" type="submit" value="Login">
             </form>
 
-            <br>
+            
             <!--SIGN UP BUTTON-->
-            <button id="signUp"><a href="f_p2.html">Sign Up</a></button>
+            <button class="button"><a href="f_p2.html">Sign Up</a></button><br><br>
 
             <!--ENTER PASSWORD-->
             <div>
@@ -60,6 +61,10 @@
             </div> 
         </div>
     </div>
+        
+    <script src="f.js"></script>
+    
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 </body>
 </html>
