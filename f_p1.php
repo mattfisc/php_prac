@@ -19,16 +19,23 @@
             
             <div id="message">
                 <?php
-                    $fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    //$fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $fullUrl = "http://localhost:$_SERVER[REQUEST_URI]";
 
-                    if(strpos($fullUrl, "signup=welcome") == true){
-                        echo "<p>welcome<p>";
+                    // LOGIN IN SUCCESS
+                    if(strpos($fullUrl, "message=created") == true){
+                        echo "<p class='message'>Created Member Record!<p>";
+                      
                     }
-                    else if(strpos($fullUrl, "signup=fail") == true){
-                        echo "<p>failed<p>";
+                    // LOGIN FAILED
+                    else if(strpos($fullUrl, "message=fail") == true){
+                        echo "<p class='error'>Failed to login. Try to register first.<p>";
+               
                     }
+                    // LOADING PAGE DEFAULT
                     else{
-                        echo "<p>Empty<p>";
+                        echo "<p class='message'>Register or Login!<p>";
+                  
                     }
                 ?>
             </div>
@@ -45,7 +52,7 @@
 
             
             <!--SIGN UP BUTTON-->
-            <button class="button"><a href="f_p2.html">Sign Up</a></button><br><br>
+            <button class="button"><a href="f_p2.php">Sign Up</a></button><br><br>
 
             <!--ENTER PASSWORD-->
             <div>

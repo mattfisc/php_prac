@@ -64,3 +64,21 @@ div {
     margin: 0px;
     
 }
+
+.message {
+    width: fit-content;
+    height: fit-content;
+
+    background-color: lightblue;
+    border: black 1px dashed;
+    padding: 10px;
+}
+
+.error {
+    width: fit-content;
+    height: fit-content;
+
+    background-color: lightskyblue;
+    border: red 1px dashed;
+    padding: 10px;
+}
