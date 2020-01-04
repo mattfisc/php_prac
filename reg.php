@@ -15,32 +15,31 @@ if ($mysqli->connect_errno) {
 
 // TEST IF MEMBER EXISTS BY EMAIL
 $test = "SELECT * FROM `fitnesssignup` WHERE Email = '$email' ";
-
+echo $test;
 
 // TEST
 $check = mysqli_query($mysqli,$test);
 // NUMBER OF ROWS IN QUERY FOUND
 $num = mysqli_num_rows($check);
-echo "<p>Member email taken.  Try again! <br></p>";
+
 if($num == 1){
-  header('location:f_p2.html');
+  header('location:f_p2.php?message="fail"');
   echo "<p>Member email taken.  Try again! <br></p>";
-}else{
-  header('location:f_p1.html');
-  echo "Creating Member... <br>";
-  echo "<p>Creating Member...</p>";
+}
+else{
+  
   // QUERY STRING FOR MEMBER
   $createMember = "INSERT INTO fitnesssignup (`FirstName`, `LastName`, `Email`, `Pass`) VALUES ('".$firstName."','".$lastName."','".$email."','".$pwd."')";
 
-  $message = "Member created!<br>Try to login in";
-  //echo "<script type='text/javascript'>alert('$message');</script>";
-
-  // CREATE MEMBER
+  // CREATE MEMBER ERROR CHECK
   if ($mysqli->query($createMember) === TRUE) {
+    // SUCCEESS
+    header('location:f_p1.php?message="created');
+  } 
+  else {
+    // RETURN ERROR
+    header('location:f_p2.php?message="fail"');
     
-  } else {// RETURN ERROR
-    $message = "Member already exists";
-    //echo "<script type='text/javascript'>alert('$message');</script>";
 
   }
 }
