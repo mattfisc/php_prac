@@ -21,15 +21,15 @@
             <div id="message">
                 <?php
                     //$fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                    $fullUrl = "http://localhost:$_SERVER[REQUEST_URI]";
+                    $url = "http://localhost:$_SERVER[REQUEST_URI]";
 
                     // FAILED TO REGISTER
-                    if(strpos($fullUrl, "message=fail") == true){
+                    if(strpos($url, "message=fail") == true){
                         echo "<p class='error'>Failed to register.<p>";
         
                     }
                     else{
-                        echo "<p class='message'>Register!<p>";
+                        echo "<p class='message'>Register here!<p>";
   
                     }
                 ?>
