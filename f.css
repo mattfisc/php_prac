@@ -66,6 +66,7 @@ div {
 }
 
 .message {
+    text-align: center;
     width: fit-content;
     height: fit-content;
 
@@ -75,10 +76,11 @@ div {
 }
 
 .error {
+    text-align: center;
     width: fit-content;
     height: fit-content;
 
-    background-color: lightskyblue;
+    background-color: lightcoral;
     border: red 1px dashed;
     padding: 10px;
 }
