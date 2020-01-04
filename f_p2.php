@@ -13,7 +13,7 @@
     <div class="page" >
 
         <div class="header">
-            <h1 id="result"> Sign-up for Fitness Aid</h1>
+            <h1> Sign-up for Fitness Aid</h1>
         </div>
 
         <div class="content">

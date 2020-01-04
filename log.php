@@ -3,7 +3,7 @@
 
 // FIRST PAGE
 $email = $_POST['userEmail'];
-$pwd = $_POST['userEmail'];
+$pwd = $_POST['userPwd'];
 
 //NOTE: $mysqli = new mysqli("127.0.0.1", "username", "password", "database", 3306);
 $mysqli = new mysqli("localhost","root","","cs222");
@@ -19,18 +19,18 @@ $test = "SELECT Email, Pass FROM `fitnesssignup` WHERE Email = '$email'";
 $check = $mysqli->query($test);
 
 // LOGIN IN MEMBER
-
 if($check->num_rows > 0){
     while($row = $check->fetch_assoc()){
+        // FIND CORRECT EMAIL WITH PASSWORD
         if($row['Email']=== $email && $row['Pass']=== $pwd){
-            // CHANGE PAGE
+            // MEMBER EXISTS
             header('location:f_p3.php');
             
         }
     }
 }
 else{
-    // CHANGE PAGE
+    // MEMBER DOES NOT EXIST
     header('location:f_p1.php?message=fail');
 }
 

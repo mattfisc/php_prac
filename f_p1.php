@@ -25,17 +25,19 @@
                     // LOGIN IN SUCCESS
                     if(strpos($fullUrl, "message=created") == true){
                         echo "<p class='message'>Created Member Record!<p>";
+                     
                       
                     }
                     // LOGIN FAILED
                     else if(strpos($fullUrl, "message=fail") == true){
                         echo "<p class='error'>Failed to login. Try to register first.<p>";
+                     
                
                     }
                     // LOADING PAGE DEFAULT
                     else{
                         echo "<p class='message'>Register or Login!<p>";
-                  
+                        
                     }
                 ?>
             </div>

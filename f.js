@@ -28,13 +28,6 @@ function clearPassword(){
 }
 
 
-// PAGE TWO--------------------
-// SIGN UP PAGE
-
-function loginPage(){
-    
-}
-
 // PAGE THREE--------------------------
 // MEMBER PAGE
 function submitMuscleGroup(){
@@ -50,8 +43,7 @@ function submitMuscleGroup(){
 
 function createList(){
 
-// ARRAY
-    //var json = JSON.parse(this.responseText);
+    // ARRAY
     var json = this.responseText;
     document.getElementById("displayMuscleGroup").innerHTML = json;
 }
