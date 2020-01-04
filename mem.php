@@ -15,9 +15,18 @@ if ($mysqli->connect_errno) {
 
 
 $result = mysqli_query($mysqli,"SELECT * FROM `workout` WHERE Muscle = '" .$input. "'" );
+ 
+// working display
+// STRING OF EXERCISES
+// while($row = mysqli_fetch_array($result)){
+//   echo $row['Exercises'];
+// }
 
-while($row = mysqli_fetch_array($result))
-echo $row['Exercises'];
+while($row = mysqli_fetch_array($result)){
+  echo "<ul>";
+  echo "<li>". $row['Exercises']. "</li>";
+  echo "</ul>";
+
 
 
 
