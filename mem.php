@@ -22,12 +22,14 @@ $result = mysqli_query($mysqli,"SELECT * FROM `workout` WHERE Muscle = '" .$inpu
 //   echo $row['Exercises'];
 // }
 
+
+// GET EXERCISES
 while($row = mysqli_fetch_array($result)){
-  echo "<ul>";
-  echo "<li>". $row['Exercises']. "</li>";
-  echo "</ul>";
+  $string = $row['Exercises'];
+}
 
-
+// PRINT EXERCISES
+//echo $string;
 
 
 
