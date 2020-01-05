@@ -18,7 +18,7 @@
 
         <div class="content">
 
-            <div id="message">
+            <div id="mess">
                 <?php
                     //$fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $url = "http://localhost:$_SERVER[REQUEST_URI]";
@@ -28,6 +28,12 @@
                         echo "<p class='error'>Failed to register.<p>";
         
                     }
+                    // FAILED TO REGISTER EMAIL TAKEN
+                    if(strpos($url, "message=emailerror") == true){
+                        echo "<p class='error'>Failed to register.  Email is already used.<p>";
+        
+                    }
+                    // DEFAULT LOAD
                     else{
                         echo "<p class='message'>Register here!<p>";
   

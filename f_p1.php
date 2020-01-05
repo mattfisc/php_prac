@@ -17,7 +17,7 @@
         <div class="content">
             <!--DISPLAY MESSAGE-->
             
-            <div id="message">
+            <div id="mess">
                 <?php
                     //$fullUrl = "http://$SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $fullUrl = "http://localhost:$_SERVER[REQUEST_URI]";
@@ -25,14 +25,17 @@
                     // LOGIN IN SUCCESS
                     if(strpos($fullUrl, "message=created") == true){
                         echo "<p class='message'>Created Member Record!<p>";
-                     
-                      
+
                     }
                     // LOGIN FAILED
                     else if(strpos($fullUrl, "message=fail") == true){
                         echo "<p class='error'>Failed to login. Try to register first.<p>";
                      
-               
+                    }
+                    // LOGIN FAILED
+                    else if(strpos($fullUrl, "message=error") == true){
+                        echo "<p class='error'>Failed to login. Email or Password is incorrect!.<p>";
+
                     }
                     // LOADING PAGE DEFAULT
                     else{

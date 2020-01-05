@@ -26,7 +26,7 @@ $num = mysqli_num_rows($check);
 
 // EMAIL TAKEN REGISTRATION ERROR
 if($num == 1){
-  header('location:f_p2.php?message="fail"');// TRY AGAIN
+  header('location:f_p2.php?message="emailerror"');// TRY AGAIN
 
 }
 else{

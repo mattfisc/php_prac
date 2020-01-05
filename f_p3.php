@@ -18,7 +18,7 @@
 
         <div class="content">
 
-            <div id="message"></div>
+            <div id="mess"></div>
 
             Muscle Group:<br>
             <select name="muscleInput" id="muscleInput">
