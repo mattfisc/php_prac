@@ -13,7 +13,7 @@
     <div class="page"  >
 
         <div class="header">
-            <h1> Welcome new Member</h1>
+            <h1 id="welcome"> Welcome new Member</h1>
         </div>
 
         <div class="content">
@@ -35,10 +35,10 @@
                 <option value="Deltoids">Deltoids</option>
                 <option value="Triceps">Triceps</option>
                 <option value="Biceps">Biceps</option>
-            </select><br>
+            </select>
             
             <!--Button-->
-            <button class="button" onclick="submitMuscleGroup()">Select Muscle</button>
+            <button id="muscleBtn" class="button" onclick="submitMuscleGroup()">Select Muscle</button>
 
             <p id="displayMuscleGroup"></p>
         </div>

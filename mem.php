@@ -2,8 +2,6 @@
 
 // MEMBER INPUT
 $input = $_GET['q'];
-echo "Exercises for " .$input;
-echo "<br>----------------<br>";
 
 $mysqli = new mysqli("localhost","root","","cs222");
 if ($mysqli->connect_errno) {
@@ -24,13 +22,29 @@ $result = mysqli_query($mysqli,"SELECT * FROM `workout` WHERE Muscle = '" .$inpu
 
 
 // GET EXERCISES
-while($row = mysqli_fetch_array($result)){
-  $string = $row['Exercises'];
-}
 
-// PRINT EXERCISES
+// STORE IN ARRAY
+$arr = mysqli_fetch_array($result);
+$string = $arr['Exercises'];
+
+
+// PRINT EXERCISES STRING
 //echo $string;
 
+$str_arr = preg_split ("/\,/", $string);  
 
+// ARRAY LENGTH
+$length = count($str_arr);
+
+
+// DISPLAY EXERCISES
+echo "<p class=title>Exercises for " .$input. "</p>";
+
+
+echo "<ul>";
+for($i = 0;$i < $length; $i++){
+  echo "<li>".$str_arr[$i]."</li>";
+}
+echo "</ul>";
 
 ?>

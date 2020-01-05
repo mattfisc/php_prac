@@ -21,6 +21,7 @@ $check = $mysqli->query($test);
 // LOGIN IN MEMBER
 if($check->num_rows > 0){
     while($row = $check->fetch_assoc()){
+        
         // FIND CORRECT EMAIL WITH PASSWORD
         if($row['Email']=== $email && $row['Pass']=== $pwd){
             // MEMBER EXISTS

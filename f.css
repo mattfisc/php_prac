@@ -84,3 +84,23 @@ div {
     border: red 1px dashed;
     padding: 10px;
 }
+
+.title {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 10px;
+
+    color: white;
+    background-color: black;
+    border: white 1px solid;
+    padding: 10px;
+}
+
+.content {
+    padding: 10px;
+}
+
+#muscleBtn {
+    width: fit-content;
+    padding: 2px;
+}
